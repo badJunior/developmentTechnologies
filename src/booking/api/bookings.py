@@ -28,6 +28,24 @@ async def create_booking(
     except Exception as e:
         raise HTTPException(status_code=422, detail=str(e))
 
+
 @router.get("/seats")
-async def list_seats():
-    return [{"id": "11111111-1111-1111-1111-111111111111", "code": "desk-1"}]
+async def list_seats(date: str = "2026-12-01"):
+    return [
+        {
+            "id": "11111111-1111-1111-1111-111111111111",
+            "code": "desk-1",
+            "kind": "desk",
+            "capacity": 1,
+            "is_available": True,
+            "busy_intervals": []
+        },
+        {
+            "id": "22222222-2222-2222-2222-222222222221",
+            "code": "room-a",
+            "kind": "meeting_room",
+            "capacity": 8,
+            "is_available": True,
+            "busy_intervals": []
+        }
+    ]

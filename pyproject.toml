@@ -5,11 +5,13 @@ description = "Meeting room booking service"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "aio-pika>=10.2.3",
     "alembic>=1.20.1",
     "asyncpg>=0.32.0",
     "fastapi[standard]>=0.115.0",
     "pydantic-settings>=2.6.0",
     "pyjwt>=2.15.1",
+    "redis>=8.1.0",
     "sqlalchemy[asyncio]>=2.1.8",
     "structlog>=24.4.0",
 ]
