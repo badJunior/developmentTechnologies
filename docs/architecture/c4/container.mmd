@@ -1,0 +1,10 @@
+flowchart TB
+    visitor["Сотрудник"]
+    subgraph boundary["Система"]
+        web["Клиент<br/><i>Vue 3.5</i><br/>ЛР 8"]
+        api["API<br/><i>Python 3.13, FastAPI</i><br/>Логика броней"]
+        db[("БД<br/><i>PostgreSQL 17</i><br/>Комнаты, брони<br/>ЛР 4А")]
+    end
+    visitor -->|"HTTPS"| web
+    web -->|"JSON"| api
+    api -->|"SQL"| db
