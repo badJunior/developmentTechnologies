@@ -1,0 +1,36 @@
+openapi: 3.1.0
+info:
+  title: Booking API
+  version: 1.0.0
+paths: {}
+components:
+  schemas:
+    Booking:
+      type: object
+      properties:
+        id: { type: string }
+        seat_id: { type: string }
+        user_id: { type: string }
+        starts_at: { type: string }
+        ends_at: { type: string }
+        status: { type: string }
+    SeatListResponse:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            type: object
+            properties:
+              id: { type: string }
+              code: { type: string }
+              kind: { type: string }
+              capacity: { type: number }
+              is_available: { type: boolean }
+              busy_intervals: { type: array }
+    TokenPair:
+      type: object
+      properties:
+        access_token: { type: string }
+        refresh_token: { type: string }
+        expires_in: { type: number }
