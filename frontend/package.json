@@ -1,0 +1,42 @@
+{
+  "name": "frontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "schemas": "node scripts/generate-schemas.js",
+    "lint": "eslint . --max-warnings 0",
+    "format": "prettier --write src",
+    "format:check": "prettier --check src",
+    "test": "vitest run tests/unit",
+    "test:contract": "vitest run tests/contract",
+    "test:e2e": "playwright test --project=e2e",
+    "test:a11y": "playwright test --project=a11y"
+  },
+  "dependencies": {
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "pinia": "^4.1.0",
+    "vue": "^3.5.44",
+    "vue-router": "^5.5.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "1.49.0",
+    "@vitejs/plugin-vue": "^6.0.10",
+    "@vue/test-utils": "^2.5.1",
+    "eslint": "^10.15.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-vue": "^10.12.1",
+    "globals": "^17.14.0",
+    "js-yaml": "^5.5.0",
+    "jsdom": "^29.1.1",
+    "prettier": "^3.10.1",
+    "vite": "^8.3.6",
+    "vitest": "^5.1.0"
+  }
+}
