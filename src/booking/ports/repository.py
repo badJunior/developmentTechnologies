@@ -1,6 +1,0 @@
-from typing import Protocol
-from booking.domain.models import Booking, SeatId, TimeRange
-
-class BookingRepository(Protocol):
-    async def add(self, booking: Booking) -> None: ...
-    async def find_overlapping(self, seat_id: SeatId, period: TimeRange) -> list[Booking]: ...
